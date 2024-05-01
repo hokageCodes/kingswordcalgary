@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FaPlayCircle } from 'react-icons/fa';
 
 const VideoSection = () => {
-  const videoIds = ['BGp3oTBJVFo', 'ElasRjYH00c', 'fkzCLS-FXc0', '8Odgf0HKKkQ'];
+  const videoIds = ['7WEiRKtcQPQ', '2GdRNqe2WNU', 'DNJJi2aKpO8', 'BSPQybd7T3A'];
   const [videos, setVideos] = useState(videoIds.map(id => ({ id, title: 'Loading title...' })));
   const [currentVideoId, setCurrentVideoId] = useState(videoIds[0]);
 
