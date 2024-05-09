@@ -5,14 +5,14 @@ import CoreValuesSection from '../core-values/CoreValuesSection';
 function OurBeliefContent() {
   return (
     <>
-      <section className="container mx-auto flex flex-wrap gap-24 items-center justify-center py-12 px-4 lg:px-0">
+      <section id='history' className="container mx-auto flex flex-wrap gap-24 items-center justify-center py-12 px-4 lg:px-0">
         <div className="flex-1 max-w-md text-center lg:text-left mb-8 lg:mb-0">
           <h2 className="text-5xl max-w-xs font-bold mb-4">Raising A Supernatural Army</h2>
           <hr className="border-t-4 border-[#c27803] w-full lg:w-2/4 mb-8" />
-          <p className="mb-8 text-xl">KingsWord International Church, Chicago is committed to raising a people of purpose.</p>
-          <p className="mb-8 text-xl">To proclaim Jesus, the Anointed one and present him clearly to the world.</p>
-          <p className="mb-8 text-xl">We emphasize victory is by the Word and the strategy that is in it.</p>
-          <p className="mb-8 text-xl">We are ordained to raise up and expose Gods children into the fullness of their God-given purpose.</p>
+          <p className="mb-8 text-xl">We are a church who unequivocally believes in the supremacy of the Bible, with total submission as the final authority in doctrine and practice <b>(2 Timothy 3:16-17; 2 Peter 1:21; John 17:17)</b>.</p>
+          <p className="mb-8 text-xl">We believe in the work of GRACE, that there is absolutely no work required again of man to be done.</p>
+          <p className="mb-8 text-xl">We believe in the Trinity: <b>God, Jesus, and the Holy Spirit.</b> Our heart is poured out to God in worship. Join us today!</p>
+          <p className="mb-8 text-xl"> Love is a fruit in season at all times, and within reach of every hand. It is the greatest gift anyone can give.<br />JOIN OUR COMMUNITY!</p>
           <button className="bg-white text-[#c27803] font-bold border border-[#c27803] border-2 py-4 px-4 rounded">
             CONTACT US
           </button>

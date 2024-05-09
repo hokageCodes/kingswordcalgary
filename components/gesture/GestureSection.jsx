@@ -1,21 +1,26 @@
+"use client"
 import React from 'react';
+import Link from 'next/link'
 
 const GestureSection = () => {
   const actions = [
     {
       label: 'VOLUNTEER',
       imageUrl: '/assets/connect1.png',
-      alt: 'Volunteer'
+      alt: 'Volunteer',
+      link: '/volunteer' // Add link destination
     },
     {
       label: 'GIVE',
       imageUrl: '/assets/connect2.png',
-      alt: 'Give'
+      alt: 'Give',
+      link: '/give' // Add link destination
     },
     {
       label: 'CONNECT',
       imageUrl: '/assets/other1.jpg',
-      alt: 'Connect'
+      alt: 'Connect',
+      link: '/connect' // Add link destination
     }
   ];
 
@@ -29,16 +34,16 @@ const GestureSection = () => {
         </div>
         <div className="flex flex-wrap justify-center items-stretch gap-4">
           {actions.map((action, index) => (
-            <div key={index} className="flex-1 min-w-[24rem] max-w-xs relative h-96"> {/* Adjusted for responsive sizing and full coverage */}
+            <Link key={index} href={action.link} className="flex-1 min-w-[24rem] max-w-xs relative h-96"> {/* Use Link component here */}
               <img
                 src={action.imageUrl}
                 alt={action.alt}
-                className="absolute inset-0 w-full h-full object-cover rounded-lg" // Ensure the image covers the area properly
+                className="absolute inset-0 w-full h-full object-cover rounded-lg"
               />
               <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-30 rounded-lg">
                 <h3 className="text-white text-3xl lg:text-5xl font-bold text-center">{action.label}</h3>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

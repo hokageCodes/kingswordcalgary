@@ -1,22 +1,31 @@
 import React from "react";
+import Link from 'next/link';
 import { FaFacebook, FaGithub, FaInstagram, FaTwitter, FaTwitch, FaYoutube } from "react-icons/fa";
 
 const sections = [
   {
     title: "About Us",
-    items: ["Our History", "Leadership", "Beliefs"],
+    items: [
+      { name: "Our History", link: "/about" },
+      { name: "Leadership", link: "/about" },
+      { name: "Beliefs", link: "/about" }
+    ],
   },
   {
     title: "Locations",
-    items: ["Calgary", "Toronto", "Vancuover"],
+    items: [
+      { name: "Calgary", link: "/about" },
+      { name: "Toronto", link: "/about" },
+      { name: "Vancouver", link: "/about" }
+    ],
   },
-  // {
-  //   title: "Media",
-  //   items: ["The New Music", "Ina"],
-  // },
   {
     title: "Connect With Us",
-    items: ["Instagram", "Youtube", "Facebook", "X",],
+    items: [
+      { name: "Instagram", link: "https://www.instagram.com/kingswordcalgary?igsh=emV6anVob3d1OGly&utm_source=qr" },
+      { name: "Youtube", link: "https://youtube.com/@KingsWordIkeja?si=muyxjcxaYKfCASq9" },
+      { name: "Facebook", link: "https://www.facebook.com/share/ukpMwG5DDHkyCW4G/?mibextid=LQQJ4d" }
+    ],
   },
 ];
 
@@ -24,7 +33,7 @@ const items = [
   { name: "Facebook", icon: FaFacebook, link: "https://www.facebook.com/" },
   { name: "Instagram", icon: FaInstagram, link: "https://www.instagram.com/" },
   { name: "Twitter", icon: FaTwitter, link: "https://twitter.com/" },
-  { name: "Youtube", icon: FaYoutube, link: "https://www.twitch.tv/" },
+  { name: "Youtube", icon: FaYoutube, link: "https://www.youtube.com/" },
 ];
 
 const Footer = () => {
@@ -36,9 +45,16 @@ const Footer = () => {
             <h6 className="font-bold uppercase pt-2">{section.title}</h6>
             <ul>
               {section.items.map((item, i) => (
-                <li key={i} className="py-1 text-gray-500 hover:text-white cursor-pointer">
-                  {item}
-                </li>
+                item.link.startsWith("http") ? // Check if it's an external link
+                  <li key={i} className="py-1 text-gray-500 hover:text-white cursor-pointer">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>
+                  </li>
+                :
+                  <li key={i} className="py-1 text-gray-500 hover:text-white cursor-pointer">
+                    <Link legacyBehavior href={item.link}>
+                      <a>{item.name}</a>
+                    </Link>
+                  </li>
               ))}
             </ul>
           </div>

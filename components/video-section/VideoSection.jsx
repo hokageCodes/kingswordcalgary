@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FaPlayCircle } from 'react-icons/fa';
 
 const VideoSection = () => {
-  const videoIds = ['7WEiRKtcQPQ', '2GdRNqe2WNU', 'DNJJi2aKpO8', 'BSPQybd7T3A'];
+  const videoIds = ['QPLW5tX4PG0', '66XwQq070LQ', 'iB64Q-_tFGI', 'xRigrfRh0Hw'];
   const [videos, setVideos] = useState(videoIds.map(id => ({ id, title: 'Loading title...' })));
   const [currentVideoId, setCurrentVideoId] = useState(videoIds[0]);
 
@@ -34,7 +34,7 @@ const VideoSection = () => {
         {/* Video Thumbnails */}
         <div className="w-full md:w-1/3 space-y-4 pr-4">
           {videos.map(video => (
-            <div key={video.id} className="bg-gray-200 hover:bg-gray-300 rounded-lg cursor-pointer p-2 flex items-center">
+            <div onClick={() => setCurrentVideoId(video.id)} key={video.id} className="bg-gray-200 hover:bg-gray-300 rounded-lg cursor-pointer p-2 flex items-center">
               <div className="w-16 h-16 flex-none bg-cover rounded-lg overflow-hidden mr-4">
                 <img
                   src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
@@ -45,7 +45,7 @@ const VideoSection = () => {
               <div className="flex-grow">
                 <p className="text-sm font-medium">{video.title}</p>
               </div>
-              <FaPlayCircle className="text-xl" onClick={() => setCurrentVideoId(video.id)} />
+              <FaPlayCircle className="text-xl" />
             </div>
           ))}
         </div>
