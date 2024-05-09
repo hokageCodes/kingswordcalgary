@@ -37,7 +37,7 @@ const GivingPage = () => {
       />
       <CallToActionSection
         title="Partner with Us"
-        content="With your love gift to the ministry, we can plant new churches, strengthen local missions & take the message of God's supernatural power to the ends of the earth."
+        content="With your love gift to the ministry, we can plant new churches, strengthen local missions & take the message of God&#39;s supernatural power to the ends of the earth."
         buttonText="Give Now"
         imageSrc="/assets/connect2.png" // Replace with your image path
         imageAlt="Illustration for Partnership"
