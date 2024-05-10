@@ -4,14 +4,26 @@ import { FaPlayCircle } from 'react-icons/fa';
 
 const VideoSection = () => {
   const videoIds = ['QPLW5tX4PG0', '66XwQq070LQ', 'iB64Q-_tFGI', 'xRigrfRh0Hw'];
-  const [videos, setVideos] = useState(videoIds.map(id => ({ id, title: 'Loading title...' })));
+  const [videos, setVideos] = useState(videoIds.map(id => ({
+    id,
+    title: 'Loading title...',
+    pastor: 'Loading pastor...'
+  })));
   const [currentVideoId, setCurrentVideoId] = useState(videoIds[0]);
 
   useEffect(() => {
-    // Simulated fetching of video titles
+    // Simulated fetching of video titles and pastor names
+    const videoDetails = [
+      { title: "Building Successful Relationships", pastor: "Pastor Mildred Okonkwo" },
+      { title: "Supernatural Lifestyle", pastor: "Pastor Muyiwa Oseni" },
+      { title: "Limitless - Living Unashamed", pastor: "Pastor May" },
+      { title: "March Prayer Meeting", pastor: "Kingsword Church" }
+    ];
+
     setVideos(videos.map((video, index) => ({
       ...video,
-      title: `Dynamic Title ${index + 1}`,
+      title: videoDetails[index].title,
+      pastor: videoDetails[index].pastor,
     })));
   }, []);
 
@@ -38,12 +50,13 @@ const VideoSection = () => {
               <div className="w-16 h-16 flex-none bg-cover rounded-lg overflow-hidden mr-4">
                 <img
                   src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                  alt={video.title}
+                  alt={`${video.title} by ${video.pastor}`}
                   className="object-cover w-full h-full"
                 />
               </div>
               <div className="flex-grow">
                 <p className="text-sm font-medium">{video.title}</p>
+                <p className="text-xs text-gray-600">{video.pastor}</p>
               </div>
               <FaPlayCircle className="text-xl" />
             </div>
@@ -55,6 +68,5 @@ const VideoSection = () => {
 };
 
 export default VideoSection;
-
 
 

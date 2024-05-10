@@ -14,9 +14,9 @@ const sections = [
   {
     title: "Locations",
     items: [
-      { name: "Calgary", link: "/about" },
-      { name: "Toronto", link: "/about" },
-      { name: "Vancouver", link: "/about" }
+      { name: "Calgary", link: "/locations/calgary" },
+      { name: "Toronto", link: "/locations/toronto" },
+      { name: "Vancouver", link: "/locations/vancouver" }
     ],
   },
   {

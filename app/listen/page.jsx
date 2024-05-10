@@ -6,14 +6,25 @@ import SubscribeSection from '@/components/subscribe/SubscribeSection';
 
 const VideoSection = () => {
   const videoIds = ['QPLW5tX4PG0', '66XwQq070LQ', 'iB64Q-_tFGI', 'xRigrfRh0Hw'];
-  const [videos, setVideos] = useState(videoIds.map(id => ({ id, title: 'Loading title...' })));
+  const [videos, setVideos] = useState(videoIds.map(id => ({
+    id,
+    title: 'Loading title...',
+    pastor: 'Loading pastor...'
+  })));
   const [currentVideoId, setCurrentVideoId] = useState(videoIds[0]);
 
   useEffect(() => {
-    // Simulated fetching of video titles
+    // Simulated fetching of video titles and pastor names
+    const videoDetails = [
+      { title: "Building Successful Relationships", pastor: "Pastor Mildred Okonkwo" },
+      { title: "Supernatural Lifestyle", pastor: "Pastor Muyiwa Oseni" },
+      { title: "Limitless - Living Unashamed", pastor: "Pastor May" },
+      { title: "March Prayer Meeting", pastor: "Kingsword Church" }
+    ];
     setVideos(videos.map((video, index) => ({
       ...video,
-      title: `Dynamic Title ${index + 1}`,
+      title: videoDetails[index].title,
+      pastor: videoDetails[index].pastor,
     })));
   }, []);
 
@@ -21,7 +32,7 @@ const VideoSection = () => {
     <>
       <Head>
         <title>Video Section</title>
-        <meta name="description" content="Explore our video library." />
+        <meta name="description" content="Explore our video library with insightful sermons." />
       </Head>
       <div className="container mx-auto my-8 p-4">
         {/* Main Video Display */}
@@ -44,12 +55,13 @@ const VideoSection = () => {
               <div className="w-full md:w-24 h-24 flex-none bg-cover rounded-lg overflow-hidden mb-2 md:mb-0 md:mr-4">
                 <img
                   src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                  alt={video.title}
+                  alt={`${video.title} by ${video.pastor}`}
                   className="object-cover w-full h-full"
                 />
               </div>
               <div className="flex-grow text-center md:text-left">
                 <p className="text-sm font-medium">{video.title}</p>
+                <p className="text-xs text-gray-600">{video.pastor}</p>
               </div>
               <FaPlayCircle className="text-xl mt-2 md:mt-0" />
             </div>
