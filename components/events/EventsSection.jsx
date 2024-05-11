@@ -24,7 +24,7 @@ const EventsSection = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-700 mb-4 sm:mb-0 text-center sm:text-left">
             Catch up on our past monthly and annual events
           </h2>
-          <a href="https://youtube.com/kingswordcalgary8172?si=AqiMNKeBUnIy-DtJ" className="bg-black text-white py-2 px-6 sm:px-8 text-sm sm:text-base rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+          <a href="https://www.youtube.com/@kingswordcalgary8172/streams" className="bg-black text-white py-2 px-6 sm:px-8 text-sm sm:text-base rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
             View all events
           </a>
         </div>

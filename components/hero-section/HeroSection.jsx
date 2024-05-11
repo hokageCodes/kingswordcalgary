@@ -8,28 +8,28 @@ const HeroSection = () => {
       title: "Welcome to KingsWord Canada",
       subtitle: "Home of the Supernatural",
       image: "/assets/1.png",
-      ctaLink: "https://www.youtube.com/@kingswordcalgary8172/streams",
+      ctaLink: "/contact-form",
       ctaText: "Worship with us",
     },
     {
       title: "Welcome to KingsWord Canada",
       subtitle: "Home of the Supernatural",
       image: "/assets/2.png",
-      ctaLink: "https://www.youtube.com/@kingswordcalgary8172/streams",
+      ctaLink: "/contact-form",
       ctaText: "Worship with us",
     },
     {
       title: "Welcome to KingsWord Canada",
       subtitle: "Home of the Supernatural",
       image: "/assets/3.png",
-      ctaLink: "https://www.youtube.com/@kingswordcalgary8172/streams",
+      ctaLink: "/contact-form",
       ctaText: "Worship with us",
     },
     {
       title: "Welcome to KingsWord Canada",
       subtitle: "Home of the Supernatural",
       image: "/assets/4.png",
-      ctaLink: "https://www.youtube.com/@kingswordcalgary8172/streams",
+      ctaLink: "/contact-form",
       ctaText: "Worship with us",
     },
     // Add other slides similarly
@@ -49,7 +49,7 @@ const HeroSection = () => {
   }, [slides.length]);
 
   return (
-    <div className="relative w-full overflow-hidden" style={{ height: '80vh' }}>
+    <div className="relative w-full overflow-hidden" style={{ height: '100vh' }}>
       {slides.map((slide, index) => (
         <div
           key={index}

@@ -14,7 +14,7 @@ function OurBeliefContent() {
           <p className="mb-8 text-xl">We believe in the Trinity: <b>God, Jesus, and the Holy Spirit.</b> Our heart is poured out to God in worship. Join us today!</p>
           <p className="mb-8 text-xl"> Love is a fruit in season at all times, and within reach of every hand. It is the greatest gift anyone can give.<br />JOIN OUR COMMUNITY!</p>
           <button className="bg-white text-[#c27803] font-bold border border-[#c27803] border-2 py-4 px-4 rounded">
-            CONTACT US
+            <a href="/contact-form">CONTACT US</a>
           </button>
         </div>
         <div className="flex-1 max-w-xl grid grid-cols-1 md:grid-cols-2 gap-4">

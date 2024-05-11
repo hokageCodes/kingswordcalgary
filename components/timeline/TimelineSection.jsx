@@ -26,22 +26,20 @@ function TimelineSection() {
             }}
           >
             {[
-              { year: '2017', event: 'Event description for 2017.' },
-              { year: '2018', event: 'Event description for 2018.' },
-              { year: '2019', event: 'Event description for 2019.' },
-              { year: '2020', event: 'Event description for 2020.' },
-              { year: '2021', event: 'Event description for 2021.' },
-              { year: '2022', event: 'Event description for 2022.' },
-              { year: '2023', event: 'Event description for 2023.' },
-              { year: '2024', event: 'Event description for 2024.' },
+              { year: '1990 ', event: 'Dr. Kay receives the call to raise a supernatural army.' },
+              { year: '1993', event: 'Victory Christin Fellowship is born.' },
+              { year: '1997', event: 'KingsWord Ministries International is commissioned.' },
+              { year: '2004', event: 'Dr. Kay Ijisesan is consecrated to the apostolic office.' },
+              { year: '2017', event: 'KingsWord Calgary is commissioned.' },
+              { year: '2018 ', event: 'The New is commissioned.' },
             ].map((item, index) => (
               <SwiperSlide key={index}>
                 <div className="text-center px-4">
                   <div className="mb-2">
                     <div className="inline-block border-t-4 border-[#c27803] w-24 mb-2"></div>
                   </div>
-                  <div className="text-2xl font-bold mb-2">{item.year}</div>
-                  <p className="text-gray-600">{item.event}</p>
+                  <div className="text-2xl font-black mb-2">{item.year}</div>
+                  <p className="text-gray-900"><b>{item.event}</b></p>
                 </div>
               </SwiperSlide>
             ))}

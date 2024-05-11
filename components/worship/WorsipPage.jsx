@@ -81,6 +81,7 @@ const WorshipPage = () => {
                   <option value="city_one">Calgary</option>
                   <option value="city_two">Toronto</option>
                   <option value="city_three">Vancouver</option>
+                  <option value="city_three">Others</option>
                 </select>
               </div>
               <button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">

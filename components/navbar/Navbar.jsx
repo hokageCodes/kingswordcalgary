@@ -1,79 +1,105 @@
 "use client"
-
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import Logo from '../../assets/logo.png';
-import Dropdown from '../dropdown/Dropdown';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { AiOutlineClose, AiOutlineMenu, AiOutlineDown } from 'react-icons/ai';
+import Image from 'next/image';
+import Link from 'next/link';
+import RealLogo from '/assets/logo.png';
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+const NavBar = () => {
+  const [nav, setNav] = useState(false);
+  const [showLocationsDropdown, setShowLocationsDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
-  const handleLinkClick = () => setIsOpen(false); // Closes the menu on link click
-
-  const sidebarVariants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: '-100%' }
+  const handleNav = () => {
+    setNav(!nav);
   };
 
-  return (
-    <nav className="bg-black text-white shadow-lg z-50 relative">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image priority src={Logo} alt="Logo" width={140} height={60} layout="intrinsic" />
-          </Link>
-          {/* Primary Nav (desktop) */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link href="/" className="py-2 px-3 text-lg font-semibold">Home</Link>
-            <Link href="/about" className="py-2 px-3 text-lg font-semibold">About</Link>
-            <Link href="/connect" className="py-2 px-3 text-lg font-semibold">Connect</Link>
-            <Link href="/give" className="py-2 px-3 text-lg font-semibold">Give</Link>
-            <Link href="/listen" className="py-2 px-3 text-lg font-semibold">Listen</Link>
-            <div className="relative">
-              <button onClick={toggleDropdown} className="flex items-center py-2 px-3 text-lg font-semibold">
-                Locations <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
-              </button>
-              <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} />
-            </div>
-          </div>
-          {/* Mobile Button */}
-          <div className="md:hidden z-50">
-            <button onClick={() => setIsOpen(!isOpen)} className="flex items-center justify-center p-2">
-              {isOpen ? <FaTimes className="w-8 h-8" /> : <FaBars className="w-8 h-8" />}
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* Mobile Menu */}
-      <motion.div
-        initial="closed"
-        animate={isOpen ? "open" : "closed"}
-        variants={sidebarVariants}
-        transition={{ type: "tween", ease: "easeInOut", duration: 0.3 }}
-        className={`absolute w-full h-screen bg-black md:hidden z-40`}
-      >
-        <div className="flex flex-col items-center pt-24">
-          {['/', '/about', '/connect', '/give', '/listen'].map((path, index) => (
-            <Link key={index} href={path} className="block py-4 px-8 text-lg font-bold hover:bg-gray-700 w-full text-center" onClick={handleLinkClick}>
-              {['Home', 'About', 'Connect', 'Give', 'Listen'][index]}
-            </Link>
-          ))}
-          <div className="relative">
-            <button onClick={toggleDropdown} className="flex items-center py-2 px-3 text-lg font-semibold">
-              Locations <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown} />
-          </div>
-        </div>
-      </motion.div>
-    </nav>
-  );
-}
+  const toggleLocationsDropdown = () => {
+    setShowLocationsDropdown(!showLocationsDropdown);
+  };
 
-export default Navbar;
+  const closeNav = () => {
+    setNav(false);
+  };
+
+  // Close dropdown when clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowLocationsDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div className='bg-black text-white fixed top-0 left-0 right-0 z-50'>
+      <div className='flex justify-between items-center h-24 px-4 md:px-10'>
+        <Link legacyBehavior href="/" passHref>
+          <a className='flex items-center' onClick={closeNav}>
+            <Image src={RealLogo} alt='Real Logo' width={164} height={64} layout='intrinsic' priority />
+          </a>
+        </Link>
+        <div className='hidden md:flex relative' ref={dropdownRef}>
+          <ul className='flex items-center'>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/"><a onClick={closeNav}>Home</a></Link></li>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/about"><a onClick={closeNav}>About</a></Link></li>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/connect"><a onClick={closeNav}>Connect</a></Link></li>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/give"><a onClick={closeNav}>Give</a></Link></li>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/listen"><a onClick={closeNav}>Listen</a></Link></li>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer relative flex items-center' onClick={toggleLocationsDropdown}>
+              Locations <AiOutlineDown className="ml-1" />
+              {showLocationsDropdown && (
+                <div className='absolute left-0 mt-52 w-48 bg-white text-black rounded shadow-lg'>
+                  <ul>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/calgary"><a onClick={closeNav}>Calgary</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/toronto"><a onClick={closeNav}>Toronto</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/vancouver"><a onClick={closeNav}>Vancouver</a></Link></li>
+                  </ul>
+                </div>
+              )}
+            </li>
+          </ul>
+        </div>
+        <div className='md:hidden z-30 text-3xl' onClick={handleNav}>
+          { !nav ? <AiOutlineMenu /> : <AiOutlineClose /> }
+        </div>
+        {nav && (
+          <motion.div 
+            initial="closed"
+            animate="open"
+            variants={{ open: { opacity: 1, x: 0 }, closed: { opacity: 0, x: "-100%" } }}
+            transition={{ duration: 0.8 }}
+            className='fixed top-0 left-0 w-[75%] sm:w-[60%] h-full bg-black shadow-lg z-20'
+          >
+            <ul className='pt-20'>
+              <li className='p-4'><Link legacyBehavior href="/"><a>Home</a></Link></li>
+              <li className='p-4'><Link legacyBehavior href="/about"><a>About</a></Link></li>
+              <li className='p-4'><Link legacyBehavior href="/connect"><a>Connect</a></Link></li>
+              <li className='p-4'><Link legacyBehavior href="/give"><a>Give</a></Link></li>
+              <li className='p-4'><Link legacyBehavior href="/listen"><a>Listen</a></Link></li>
+              <li className='p-4'>
+                <button onClick={toggleLocationsDropdown} className="flex items-center justify-between w-full text-left">
+                  Locations <AiOutlineDown className="ml-1" />
+                </button>
+                {showLocationsDropdown && (
+                  <ul className='bg-white text-black'>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/calgary"><a>Calgary</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/toronto"><a>Toronto</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/vancouver"><a>Vancouver</a></Link></li>
+                  </ul>
+                )}
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default NavBar;

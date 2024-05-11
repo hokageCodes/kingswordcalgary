@@ -25,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={syne.className}>
+      <body className={`${syne.className} pt-24`}>
         <Navbar />
         {children}
         <Footer />

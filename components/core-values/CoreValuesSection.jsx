@@ -8,17 +8,16 @@ function CoreValuesSection() {
         <h2 className="text-4xl font-bold text-center mb-10">Our Core Values</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {[
-            { icon: <FaHeart />, title: 'Love', description: 'Putting others before ourselves and showing compassion.' },
-            { icon: <FaHandsHelping />, title: 'Honor', description: 'Upholding dignity and respect in all our interactions.' },
-            { icon: <FaPray />, title: 'Prayer', description: 'Believing in the power of communication with the divine.' },
-            { icon: <FaMedal />, title: 'Excellence', description: 'Striving for the highest quality in all we do.' },
-            { icon: <FaUsers />, title: 'Soul-winning', description: 'Committed to bringing people into a meaningful relationship with the divine.' },
-            { icon: <FaLightbulb />, title: 'Creativity', description: 'Encouraging innovation and originality.' },
+            { icon: <FaHeart />, title: 'Love' },
+            { icon: <FaHandsHelping />, title: 'Honor' },
+            { icon: <FaPray />, title: 'Prayer' },
+            { icon: <FaMedal />, title: 'Excellence' },
+            { icon: <FaUsers />, title: 'Soul-winning' },
+            { icon: <FaLightbulb />, title: 'Creativity' },
           ].map((value, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
+            <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center flex flex-col items-center justify-center">
               <div className="text-6xl mb-4 text-[#c27803]">{value.icon}</div>
-              <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-              <p className="text-gray-600">{value.description}</p>
+              <h3 className="text-2xl font-semibold">{value.title}</h3>
             </div>
           ))}
         </div>

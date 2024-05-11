@@ -23,7 +23,7 @@ const sections = [
     title: "Connect With Us",
     items: [
       { name: "Instagram", link: "https://www.instagram.com/kingswordcalgary?igsh=emV6anVob3d1OGly&utm_source=qr" },
-      { name: "Youtube", link: "https://youtube.com/@KingsWordIkeja?si=muyxjcxaYKfCASq9" },
+      { name: "Youtube", link: "https://www.youtube.com/@kingswordcalgary8172" },
       { name: "Facebook", link: "https://www.facebook.com/share/ukpMwG5DDHkyCW4G/?mibextid=LQQJ4d" }
     ],
   },

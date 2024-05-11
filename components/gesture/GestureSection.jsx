@@ -8,7 +8,7 @@ const GestureSection = () => {
       label: 'VOLUNTEER',
       imageUrl: '/assets/connect1.png',
       alt: 'Volunteer',
-      link: '/volunteer' // Add link destination
+      link: '/volunteer-form' // Add link destination
     },
     {
       label: 'GIVE',
