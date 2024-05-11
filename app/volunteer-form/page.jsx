@@ -33,8 +33,8 @@ const VolunteerForm = () => {
           Choose a team where you feel you can best contribute your skills and help us grow together.
         </p>
         <p>
-          Whether you're interested in helping kids learn, managing events, or leading worship, 
-          there's a place for you in our community.
+          Whether you&#39;re interested in helping kids learn, managing events, or leading worship, 
+          there&#39;s a place for you in our community.
         </p>
       </div>
       <div className="w-full md:w-1/2 p-12 flex justify-center items-center bg-white">
