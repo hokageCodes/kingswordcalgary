@@ -26,7 +26,7 @@ const VideoSection = () => {
       title: videoDetails[index].title,
       pastor: videoDetails[index].pastor,
     })));
-  }, []);
+  });
 
   return (
     <>
