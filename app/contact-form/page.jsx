@@ -29,7 +29,7 @@ const ContactForm = () => {
       <div className="w-full md:w-1/2 bg-black text-white p-12 flex flex-col justify-center">
         <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
         <p className="mb-3">
-          Got a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+          Got a question? We&#39;d love to hear from you. Send us a message and we&#39;ll respond as soon as possible.
         </p>
         <p>
           You can reach us for any inquiries, feedback, or just to say hello. We are here to help and answer any questions you have.
