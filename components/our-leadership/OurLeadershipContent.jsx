@@ -5,22 +5,22 @@ const residentPastors = [
   {
     name: 'Pastor Seun Oseni',
     title: 'KingsWord Calgary',
-    imageUrl: '/assets/hero1.jpg',
+    imageUrl: '/assets/res1.png',
   },
   {
     name: 'Pastor Kunle Mabadeje',
     title: 'KingsWord Calgary',
-    imageUrl: '/assets/hero2.jpg',
+    imageUrl: '/assets/res2.png',
   },
   {
     name: 'Pastor Hope Obaido',
     title: 'KingsWord Toronto',
-    imageUrl: '/assets/hero1.jpg',
+    imageUrl: '/assets/res3.png',
   },
   {
     name: 'Dr. Taiwo Asiwaju',
     title: 'KingsWord Vancouver',
-    imageUrl: '/assets/hero2.jpg',
+    imageUrl: '/assets/res4.png',
   },
 ];
 
@@ -41,7 +41,7 @@ const FoundersAndLeadershipSection = () => {
             <div className="lg:w-1/2 lg:pl-12">
               <h2 className="text-3xl font-semibold mb-4">Meet our founders</h2>
               <p className="text-lg max-w-lg">
-                <b>Dr. Kay and Pastor May Ijisesan</b> <br />provide apostolic oversight over KingsWord Ministries International, the umbrella covering of KingsWord International Churches and The New churches with installations spanning North America, Europe and Africa
+                Dr. Kay and Pastor May Ijisesan provide apostolic oversight over KingsWord Ministries International, the umbrella covering of KingsWord International Churches and The New churches with installations spanning North America, Europe and Africa.
               </p>
             </div>
           </div>
@@ -52,7 +52,7 @@ const FoundersAndLeadershipSection = () => {
         <div className="container mx-auto flex flex-col lg:flex-row items-center">
             <div className="lg:w-1/2">
               <img
-                src="/assets/pastey.webp"
+                src="/assets/pastey.png"
                 alt="Founders"
                 className="rounded-lg shadow-lg mb-8 lg:mb-0"
               />
@@ -60,7 +60,7 @@ const FoundersAndLeadershipSection = () => {
             <div className="lg:w-1/2 lg:pl-12">
               <h2 className="text-3xl font-semibold mb-4">Meet our Canada Zonal Pastor</h2>
               <p className="text-lg max-w-lg">
-                <b>Pastor Muyiwa Oseni</b> <br />is the Zonal Pastor for the KingsWord Ministries in Canada. KingsWord Ministries in Canada currently spans Calgary, Toronto and Vancouver.
+                Pastor Muyiwa Oseni is the Zonal Pastor for the KingsWord Ministries in Canada. KingsWord Ministries in Canada currently spans Calgary, Toronto and Vancouver.
               </p>
             </div>
           </div>
