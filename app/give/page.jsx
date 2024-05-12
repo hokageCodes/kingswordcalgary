@@ -29,7 +29,7 @@ const GivePage = () => {
         <div className="md:w-1/2 text-center md:text-left p-8">
           <h2 className="text-3xl font-semibold mb-6">Partner with us</h2>
           <p className="mb-6">
-            With your love gift to the ministry, we can plant new churches, strengthen local missions & take the message of God&#39;s supernatural power to the ends of the earth.
+            With your love gift to the ministry, we can plant new churches, strengthen local missions & take the message of Gods supernatural power to the ends of the earth.
           </p>
           <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
             GIVE NOW
