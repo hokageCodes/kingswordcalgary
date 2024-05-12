@@ -72,13 +72,13 @@ const FoundersAndLeadershipSection = () => {
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-left mb-12">Resident Pastors</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {residentPastors.map((pastor, index) => (
+            {residentPastors.map((pastor, index) => (
               <Card key={index} imgAlt={pastor.name} className="max-w-sm mx-auto">
                 <img src={pastor.imageUrl} alt={pastor.name} />
-                <h5 className="text-2xl font-bold tracking-tight text-white">
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-white">
                   {pastor.name}
                 </h5>
-                <p className="font-normal text-white">
+                <p className="font-normal text-gray-900 sm:text-white">
                   {pastor.title}
                 </p>
               </Card>
