@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FaPlayCircle } from 'react-icons/fa';
 
 const VideoSection = () => {
-  const videoIds = ['QPLW5tX4PG0', '66XwQq070LQ', 'iB64Q-_tFGI', 'xRigrfRh0Hw'];
+  const videoIds = ['bb3v9DNOKNw', 'X1i4dauSY3o', 'Mx2A3hY7X88', 'mKfynk4zHrc'];
   const [videos, setVideos] = useState(videoIds.map(id => ({
     id,
     title: 'Loading title...',
@@ -14,12 +14,12 @@ const VideoSection = () => {
   useEffect(() => {
     // Simulated fetching of video titles and pastor names
     const videoDetails = [
-      { title: "Building Successful Relationships", pastor: "Pastor Mildred Okonkwo" },
-      { title: "Supernatural Lifestyle", pastor: "Pastor Muyiwa Oseni" },
-      { title: "Limitless - Living Unashamed", pastor: "Pastor May" },
-      { title: "March Prayer Meeting", pastor: "Kingsword Church" }
+      { title: "Mother's Day - Making God's Word Final Authority", pastor: "Kingsword Calgary" },
+      { title: "Mother's Day - Making God's Word Final Authority", pastor: "Kingsword Calgary" },
+      { title: "Mother's Day - Making God's Word Final Authority", pastor: "Kingsword Calgary" },
+      { title: "Supernatural Lifestyle - Growing Up Spiritually", pastor: "Kingsword Calgary" }
     ];
-
+    
     setVideos(videos.map((video, index) => ({
       ...video,
       title: videoDetails[index].title,

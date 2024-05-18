@@ -32,7 +32,7 @@ const GivePage = () => {
             With your love gift to the ministry, we can plant new churches, strengthen local missions and take the message of God&#39;s supernatural power to the ends of the earth.
           </p>
           <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-            GIVE NOW
+            <a href="https://kingswordcalgary.churchcenter.com/giving">GIVE NOW</a>
           </button>
         </div>
       </div>

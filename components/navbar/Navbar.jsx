@@ -23,6 +23,10 @@ const NavBar = () => {
     setNav(false);
   };
 
+  const handleLinkClick = () => {
+    closeNav();
+  };
+
   // Close dropdown when clicking outside of it
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -46,19 +50,20 @@ const NavBar = () => {
         </Link>
         <div className='hidden md:flex relative' ref={dropdownRef}>
           <ul className='flex items-center'>
-            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/"><a onClick={closeNav}>Home</a></Link></li>
-            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/about"><a onClick={closeNav}>About</a></Link></li>
-            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/connect"><a onClick={closeNav}>Connect</a></Link></li>
-            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/give"><a onClick={closeNav}>Give</a></Link></li>
-            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/listen"><a onClick={closeNav}>Listen</a></Link></li>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/"><a onClick={handleLinkClick}>Home</a></Link></li>
+            {/* Add onClick event handler to each link */}
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/about"><a onClick={handleLinkClick}>About</a></Link></li>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/connect"><a onClick={handleLinkClick}>Connect</a></Link></li>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/give"><a onClick={handleLinkClick}>Give</a></Link></li>
+            <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer'><Link legacyBehavior href="/listen"><a onClick={handleLinkClick}>Listen</a></Link></li>
             <li className='p-4 font-bold hover:text-[#c27803] text-xl transition duration-500 ease-out hover:ease-in cursor-pointer relative flex items-center' onClick={toggleLocationsDropdown}>
               Locations <AiOutlineDown className="ml-1" />
               {showLocationsDropdown && (
                 <div className='absolute left-0 mt-52 w-48 bg-white text-black rounded shadow-lg'>
                   <ul>
-                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/calgary"><a onClick={closeNav}>Calgary</a></Link></li>
-                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/toronto"><a onClick={closeNav}>Toronto</a></Link></li>
-                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/vancouver"><a onClick={closeNav}>Vancouver</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/calgary"><a onClick={handleLinkClick}>Calgary</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/toronto"><a onClick={handleLinkClick}>Toronto</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/vancouver"><a onClick={handleLinkClick}>Vancouver</a></Link></li>
                   </ul>
                 </div>
               )}
@@ -77,20 +82,21 @@ const NavBar = () => {
             className='fixed top-0 left-0 w-[75%] sm:w-[60%] h-full bg-black shadow-lg z-20'
           >
             <ul className='pt-20'>
-              <li className='p-4'><Link legacyBehavior href="/"><a>Home</a></Link></li>
-              <li className='p-4'><Link legacyBehavior href="/about"><a>About</a></Link></li>
-              <li className='p-4'><Link legacyBehavior href="/connect"><a>Connect</a></Link></li>
-              <li className='p-4'><Link legacyBehavior href="/give"><a>Give</a></Link></li>
-              <li className='p-4'><Link legacyBehavior href="/listen"><a>Listen</a></Link></li>
+              {/* Add onClick event handler to each link */}
+              <li className='p-4'><Link legacyBehavior href="/"><a onClick={handleLinkClick}>Home</a></Link></li>
+              <li className='p-4'><Link legacyBehavior href="/about"><a onClick={handleLinkClick}>About</a></Link></li>
+              <li className='p-4'><Link legacyBehavior href="/connect"><a onClick={handleLinkClick}>Connect</a></Link></li>
+              <li className='p-4'><Link legacyBehavior href="/give"><a onClick={handleLinkClick}>Give</a></Link></li>
+              <li className='p-4'><Link legacyBehavior href="/listen"><a onClick={handleLinkClick}>Listen</a></Link></li>
               <li className='p-4'>
                 <button onClick={toggleLocationsDropdown} className="flex items-center justify-between w-full text-left">
                   Locations <AiOutlineDown className="ml-1" />
                 </button>
                 {showLocationsDropdown && (
                   <ul className='bg-white text-black'>
-                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/calgary"><a>Calgary</a></Link></li>
-                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/toronto"><a>Toronto</a></Link></li>
-                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/vancouver"><a>Vancouver</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/calgary"><a onClick={handleLinkClick}>Calgary</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/toronto"><a onClick={handleLinkClick}>Toronto</a></Link></li>
+                    <li className='p-2 hover:bg-gray-200'><Link legacyBehavior href="/locations/vancouver"><a onClick={handleLinkClick}>Vancouver</a></Link></li>
                   </ul>
                 )}
               </li>

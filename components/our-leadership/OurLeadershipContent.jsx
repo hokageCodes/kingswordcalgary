@@ -75,12 +75,14 @@ const FoundersAndLeadershipSection = () => {
             {residentPastors.map((pastor, index) => (
               <Card key={index} imgAlt={pastor.name} className="max-w-sm mx-auto">
                 <img src={pastor.imageUrl} alt={pastor.name} />
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-white">
-                  {pastor.name}
-                </h5>
-                <p className="font-normal text-gray-900 sm:text-white">
-                  {pastor.title}
-                </p>
+                <div className="text-center"> {/* Center aligns text */}
+                  <h5 className="text-2xl font-bold tracking-tight text-blacksm:text-white">
+                    {pastor.name}
+                  </h5>
+                  <p className="font-normal text-black sm:text-black">
+                    {pastor.title}
+                  </p>
+                </div>
               </Card>
             ))}
           </div>
